@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ssaunier/round_robin_tournament.svg?branch=master)](https://travis-ci.org/ssaunier/round_robin_tournament)
+[![Gem Version](https://badge.fury.io/rb/round_robin_tournament.svg)](http://rubygems.org/gems/round_robin_tournament)
 
 # Round Robin Tournament
 
@@ -68,3 +69,8 @@ end
 # Day 4: (OtherGuy, ), (John, George), (Paul, Ringo)
 # Day 5: (John, ), (Paul, OtherGuy), (Ringo, George)
 ```
+
+## Credits
+
+I'd like to thank [Pierre-Olivier Goffard](http://pierre-olivier.goffard.me/),
+Joel Cohen and Florent Rovetta from the [*Institut de Mathématiques de Marseille*](http://iml.univ-mrs.fr/) who helped a lot!
