@@ -17,8 +17,8 @@ describe RoundRobinTournament do
       Student = Struct.new(:name)
       students = %w(John Paul Ringo George).map { |beatle| Student.new beatle }
 
-      binomes = RoundRobinTournament.schedule(students)
-      expect { check_schedule!(binomes) }.not_to raise_error
+      teams = RoundRobinTournament.schedule(students)
+      expect { check_schedule!(teams) }.not_to raise_error
     end
   end
 

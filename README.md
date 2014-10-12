@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ssaunier/round_robin_tournament.svg?branch=master)](https://travis-ci.org/ssaunier/round_robin_tournament)
+
 # RoundRobinTournament
 
 TODO: Write a gem description
@@ -28,14 +30,14 @@ an array of two element, the last one being `nil`.
 ```ruby
 require "round_robin_tournament"
 
-# Compute all the possible binomes for each day in the classroom
+# Compute all the possible teams for each day in the classroom
 students = %w(John Paul Ringo George)
-binomes = RoundRobinTournament.schedule(students)
+teams = RoundRobinTournament.schedule(students)
 
-# Print for each day, each binome
-binomes.each_with_index do |day, index|
-  day_binomes = day.map { |binome| "(#{binome.first}, #{binome.last})" }.join(", ")
-  puts "Day #{index + 1}: #{day_binomes}"
+# Print for each day, each team
+teams.each_with_index do |day, index|
+  day_teams = day.map { |team| "(#{team.first}, #{team.last})" }.join(", ")
+  puts "Day #{index + 1}: #{day_teams}"
 end
 
 # Day 1: (Paul, George), (Ringo, John)
@@ -48,14 +50,14 @@ end
 ```ruby
 require "round_robin_tournament"
 
-# Compute all the possible binomes for each day in the classroom
+# Compute all the possible teams for each day in the classroom
 students = %w(John Paul Ringo George OtherGuy)
-binomes = RoundRobinTournament.schedule(students)
+teams = RoundRobinTournament.schedule(students)
 
-# Print for each day, each binome
-binomes.each_with_index do |day, index|
-  day_binomes = day.map { |binome| "(#{binome.first}, #{binome.last})" }.join(", ")
-  puts "Day #{index + 1}: #{day_binomes}"
+# Print for each day, each team
+teams.each_with_index do |day, index|
+  day_teams = day.map { |team| "(#{team.first}, #{team.last})" }.join(", ")
+  puts "Day #{index + 1}: #{day_teams}"
 end
 
 # Day 1: (Paul, ), (Ringo, John), (George, OtherGuy)
