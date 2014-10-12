@@ -1,8 +1,10 @@
 [![Build Status](https://travis-ci.org/ssaunier/round_robin_tournament.svg?branch=master)](https://travis-ci.org/ssaunier/round_robin_tournament)
 
-# RoundRobinTournament
+# Round Robin Tournament
 
-TODO: Write a gem description
+This little ruby gem implements the [Round Robin Tournament](http://en.wikipedia.org/wiki/Round-robin_tournament#Scheduling_algorithm) scheduling. It is useful when you want a competition
+"in which each contestant meets all other contestants in turn", or if you have a classroom
+of students and want them to work in pairs, but with a different partner every day.
 
 ## Installation
 
