@@ -7,6 +7,10 @@ This little ruby gem implements the [Round Robin Tournament](http://en.wikipedia
 "in which each contestant meets all other contestants in turn", or if you have a classroom
 of students and want them to work in pairs, but with a different partner every day.
 
+## Upgrade
+
+If you upgrade from version `0.0.1` to `0.1.0`, the tournament rotation has been reversed, which brings **stability** on first day pairs for a growing number for participants.
+
 ## Installation
 
 Add this line to your application's Gemfile:

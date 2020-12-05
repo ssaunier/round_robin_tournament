@@ -20,6 +20,20 @@ describe RoundRobinTournament do
       teams = RoundRobinTournament.schedule(students)
       expect { check_schedule!(teams) }.not_to raise_error
     end
+
+    it 'is stable growing the number of participants by 1' do
+      day_four = RoundRobinTournament.schedule(%w[a b c d]).first
+      day_five = RoundRobinTournament.schedule(%w[a b c d e]).first
+      expect(day_five[0..1]).to eq(day_four)
+      expect(day_five.last).to eq(['e', nil])
+    end
+
+    it 'is stable growing the number of participants by 2' do
+      day_four = RoundRobinTournament.schedule(%w[a b c d]).first
+      day_six = RoundRobinTournament.schedule(%w[a b c d e f]).first
+      expect(day_six[0..1]).to eq(day_four)
+      expect(day_six.last).to eq(['e', 'f'])
+    end
   end
 
   def check_schedule!(schedule)
