@@ -9,7 +9,7 @@ of students and want them to work in pairs, but with a different partner every d
 
 ## Upgrade
 
-If you upgrade from version `0.0.1` to `0.1.0`, the tournament rotation has been reversed, which brings **stability** on first day pairs for a growing number for participants.
+If you upgrade from version `0.0.1` to `0.1.1`, the tournament rotation has been reversed, which brings **stability** on first day pairs for a growing number for participants.
 
 ## Installation
 

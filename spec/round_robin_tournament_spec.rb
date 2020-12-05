@@ -21,18 +21,20 @@ describe RoundRobinTournament do
       expect { check_schedule!(teams) }.not_to raise_error
     end
 
-    it 'is stable growing the number of participants by 1' do
-      day_four = RoundRobinTournament.schedule(%w[a b c d]).first
-      day_five = RoundRobinTournament.schedule(%w[a b c d e]).first
-      expect(day_five[0..1]).to eq(day_four)
-      expect(day_five.last).to eq(['e', nil])
-    end
+    (2..20).to_a.each do |n|
+      it "is stable growing the number of participants from #{n} to #{n + 1}" do
+        day_one = RoundRobinTournament.schedule(("a".."z").to_a.take(n)).first
+        participants_day_two = ("a".."z").to_a.take(n + 1)
+        participants_day_two_last = participants_day_two.last
+        day_two = RoundRobinTournament.schedule(participants_day_two).first
 
-    it 'is stable growing the number of participants by 2' do
-      day_four = RoundRobinTournament.schedule(%w[a b c d]).first
-      day_six = RoundRobinTournament.schedule(%w[a b c d e f]).first
-      expect(day_six[0..1]).to eq(day_four)
-      expect(day_six.last).to eq(['e', 'f'])
+        if n.even?
+          day_two = day_two.reject { |pair| pair.compact.size != 2 }
+        else
+          day_one = day_one.map { |pair| pair.map { |participant| participant.nil? ? participants_day_two_last : participant } }
+        end
+        expect(day_two).to eq(day_one)
+      end
     end
   end
 
